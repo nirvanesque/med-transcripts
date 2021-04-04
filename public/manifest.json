@@ -1,0 +1,22 @@
+{
+  "name": "Medical Consultation Transcripts",
+  "short_name": "Med. Transcripts",
+  "start_url": "/index.html",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#4db6ac",
+  "theme_color": "#00695c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/src/images/icons/app-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/src/images/icons/app-icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
