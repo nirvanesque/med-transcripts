@@ -1,0 +1,13 @@
+{
+  "name": "Medical Consultation Transcripts",
+  "version": "1.0.0",
+  "description": "App for recording transcripts of doctor-patient consultations.",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "author": "Anirvan Basu",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}
