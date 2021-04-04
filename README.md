@@ -1,4 +1,4 @@
-# Code for the FE Guild 2019 PWA Workshop
+# Code for Baseline PWA
 
 If you didn't do it already: Fork and then Clone the following repository: https://github.com/nirvanesque/progressive-web-app/
 
