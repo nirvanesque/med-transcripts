@@ -81,3 +81,33 @@ addEventListener('backgroundfetchsuccess', event => {
     })()
   );
  });
+
+const CACHE_DYNAMIC_NAME = 'dynamic';
+
+self.addEventListener('fetch', event => {
+    console.log('[Service Worker] Fetching something ...', event);
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+              if (response) {
+                return response
+              }
+              // Clone the request - a request is a stream and can be only consumed once
+              const requestToCache = event.request.clone();
+              return fetch(requestToCache)
+                .then(response => {
+                  if (!response || response.status !== 200) {
+                    return response;
+                  }
+                  // Again clone the response because you need to add it into the cache
+                  const responseToCache = response.clone();
+                  caches.open(CACHE_DYNAMIC_NAME)
+                    .then(cache => {
+                      cache.put(requestToCache, responseToCache);
+                    });
+                  return response;
+                })
+            })
+            .catch(error => console.log('[Service Worker] Dynamic cache error ...', error))
+    );
+});
